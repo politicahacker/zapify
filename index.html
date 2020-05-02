@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escolha seu grupo</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+        body {
+            align-items: center;
+            background-image: url("img/background-zap.jpg");
+            display: flex;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            justify-content: center;
+            overflow-x: hidden;
+            width: 100vw;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 24px 24px 8px 24px;
+            max-width: 360px;
+            width: 80vw;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h3 {
+            color: #444;
+        }
+
+        .zap-svg {
+            margin: 0 auto;
+            width: 64px;
+        }
+
+        .zap-svg svg {
+            fill: #128c7e;
+            width: 100%;
+        }
+
+        select {
+            background: white;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        button {
+            align-items: center;
+            border: unset;
+            background: #075e54;
+            color: #fff;
+            display: flex;
+            font-size: 17px;
+            font-weight: 600;
+            padding: 12px 16px;
+            margin: 24px auto;
+        }
+
+        button svg {
+            fill: #fff;
+            height: 15px;
+            margin-left: 8px;
+        }
+
+        .sep {
+            border-top: 1px solid #AAA;
+            width: 100%;
+        }
+
+        .logo {
+            margin-top: 8px;
+            opacity: .4;
+            width: 90px;
+        }
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            color: unset;
+            display: block;
+            -webkit-tap-highlight-color: transparent;
+            margin-bottom: 24px;
+        }
+    </style>
+
+<script>
+    GRUPOS = {
+        "AC" : "http://www.ac.gov.br",
+        "SP" : "http://www.sp.gov.br",
+        
+    }
+    $(document).ready(function () {
+        $("button").click(function (event) {
+            event.preventDefault();
+            var selected = $("select").children("option:selected"). val();
+            window.location = GRUPOS[selected];
+        });
+    });
+
+</script>
+
+</head>
+<body>
+<div class="container">
+<div class="zap-svg">
+<svg viewBox="0 0 64 64">
+<path d="M54.7,9.1C48.8,3.2,40.9,0,32.6,0C15.3,0,1.3,14,1.3,31.2c0,5.5,1.5,10.9,4.1,15.7L1,63.1l16.6-4.3c4.5,2.5,9.7,3.8,15,3.8c17.3,0,31.3-14,31.3-31.3C63.9,23,60.6,15.1,54.7,9.1z M32.6,57.3c-4.6,0-9.3-1.3-13.2-3.7l-1-0.6l-9.9,2.6l2.7-9.6l-0.6-1C8,40.9,6.6,36.2,6.6,31.2c-0.1-14.3,11.6-26,26-26c6.9,0,13.5,2.7,18.4,7.6s7.6,11.4,7.6,18.4C58.5,45.7,46.9,57.3,32.6,57.3z" />
+<path d="M46.8,37.9c-0.8-0.4-4.5-2.4-5.3-2.6c-0.7-0.3-1.3-0.4-1.8,0.4s-2,2.6-2.5,3.1c-0.5,0.5-0.9,0.6-1.7,0.2c-0.8-0.4-3.3-1.2-6.3-3.8c-2.4-2.1-3.8-4.6-4.3-5.4s0-1.2,0.3-1.6c0.9-1.1,1.7-2.2,2-2.7c0.3-0.5,0.1-1-0.1-1.4c-0.2-0.4-1.8-4.2-2.4-5.8c-0.6-1.5-1.3-1.3-1.8-1.4c-0.5,0-1,0-1.5,0s-1.4,0.2-2.1,1c-0.7,0.8-2.8,2.7-2.8,6.5s2.8,7.6,3.2,8.1c0.4,0.5,5.5,8.4,13.3,11.8c1.9,0.8,3.4,1.3,4.4,1.7c1.9,0.6,3.6,0.5,4.9,0.3c1.5-0.2,4.6-1.9,5.2-3.8c0.7-1.9,0.7-3.4,0.5-3.8C48.2,38.4,47.6,38.2,46.8,37.9z" />
+</svg>
+</div>
+<h1>Participe dos grupos</h1>
+<h3>Selecione sua região:</h3>
+<form action="/" method="GET">
+<select name="regiao" id="regiao" required>
+<option selected disabled value=''>Região</option>
+<option value="AC">Acre</option>
+<option value="AL">Alagoas</option>
+<option value="AP">Amapá</option>
+<option value="AM">Amazonas</option>
+<option value="BA">Bahia</option>
+<option value="CE">Ceará</option>
+<option value="DF">Distrito Federal</option>
+<option value="ES">Espírito Santo</option>
+<option value="GO">Goiás</option>
+<option value="GOI">Goiás - Interior</option>
+<option value="MA">Maranhão</option>
+<option value="MT">Mato Grosso</option>
+<option value="MTC">Mato Grosso - Cuiabá</option>
+<option value="MS">Mato Grosso do Sul</option>
+<option value="MG">Minas Gerais</option>
+<option value="PA">Pará</option>
+<option value="PB">Paraíba</option>
+<option value="PR">Paraná</option>
+<option value="PRC">Paraná - Curitiba</option>
+<option value="PE">Pernambuco</option>
+<option value="PI">Piauí</option>
+<option value="RJ">Rio de Janeiro</option>
+<option value="RJB">Rio de Janeiro - Baixada</option>
+<option value="RJC">Rio de Janeiro - Capital</option>
+<option value="RN">Rio Grande do Norte</option>
+<option value="RS">Rio Grande do Sul</option>
+<option value="RO">Rondônia</option>
+<option value="RR">Roraima</option>
+<option value="SC">Santa Catarina</option>
+<option value="SPBSAN">São Paulo - Baixada Santista</option>
+<option value="SPCAM">São Paulo - Campinas</option>
+<option value="SPC">São Paulo - Capital</option>
+<option value="SPA">São Paulo - Grande ABC</option>
+<option value="SPI">São Paulo - Interior</option>
+<option value="SE">Sergipe</option>
+<option value="TO">Tocantins</option>
+</select>
+<button type="submit">Acessar <svg viewBox="0 0 492.004 492.004">
+<path d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136
+			c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002
+			v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864
+			c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872
+			l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z" />
+</svg>
+</button>
+</form>
+<div class="sep"></div>
+<img src="img/logo.png" alt="All seeing eye" class="logo">
+</div>
+
+</body>
+</html>
