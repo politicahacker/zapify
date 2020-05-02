@@ -95,6 +95,8 @@
     </style>
 
 <script>
+
+    //EDITE ISSO AQUI PARA ADICIONAR OS ENDEREÇOS DOS GRUPOS
     GRUPOS = {
         "AC" : "http://www.ac.gov.br",
         "SP" : "http://www.sp.gov.br",
@@ -104,7 +106,12 @@
         $("button").click(function (event) {
             event.preventDefault();
             var selected = $("select").children("option:selected"). val();
-            window.location = GRUPOS[selected];
+            if (GRUPOS[selected]) {
+                window.location = GRUPOS[selected];
+            }
+            else {
+                alert("Esse grupo ainda não foi criado.")
+            }
         });
     });
 
@@ -119,9 +126,10 @@
 <path d="M46.8,37.9c-0.8-0.4-4.5-2.4-5.3-2.6c-0.7-0.3-1.3-0.4-1.8,0.4s-2,2.6-2.5,3.1c-0.5,0.5-0.9,0.6-1.7,0.2c-0.8-0.4-3.3-1.2-6.3-3.8c-2.4-2.1-3.8-4.6-4.3-5.4s0-1.2,0.3-1.6c0.9-1.1,1.7-2.2,2-2.7c0.3-0.5,0.1-1-0.1-1.4c-0.2-0.4-1.8-4.2-2.4-5.8c-0.6-1.5-1.3-1.3-1.8-1.4c-0.5,0-1,0-1.5,0s-1.4,0.2-2.1,1c-0.7,0.8-2.8,2.7-2.8,6.5s2.8,7.6,3.2,8.1c0.4,0.5,5.5,8.4,13.3,11.8c1.9,0.8,3.4,1.3,4.4,1.7c1.9,0.6,3.6,0.5,4.9,0.3c1.5-0.2,4.6-1.9,5.2-3.8c0.7-1.9,0.7-3.4,0.5-3.8C48.2,38.4,47.6,38.2,46.8,37.9z" />
 </svg>
 </div>
+<!-- EDITE AQUI PARA ADICIONAR OU REMOVER OPÇÕES -->
 <h1>Participe dos grupos</h1>
 <h3>Selecione sua região:</h3>
-<form action="/" method="GET">
+<form>
 <select name="regiao" id="regiao" required>
 <option selected disabled value=''>Região</option>
 <option value="AC">Acre</option>
