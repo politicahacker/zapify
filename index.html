@@ -138,7 +138,7 @@
             $("#regiao").append("<option value='"+g+"'>" + g +"</option>")
         }
         
-        $("button").click(function (event) {
+        $("#zap button").click(function (event) {
             event.preventDefault();
             var selected = $("select").children("option:selected"). val();
             if (GRUPOS[selected]) {
@@ -164,7 +164,7 @@
 <!-- EDITE AQUI PARA ADICIONAR OU REMOVER OPÇÕES -->
 <h1>Participe dos grupos</h1>
 <h3>Selecione sua região:</h3>
-<form>
+<form id="zap">
 <select name="regiao" id="regiao" required>
 <option selected disabled value=''>Região</option>
 </select>
