@@ -98,11 +98,38 @@
 
     //EDITE ISSO AQUI PARA ADICIONAR OS ENDEREÇOS DOS GRUPOS
     GRUPOS = {
-        "AC" : "http://www.ac.gov.br",
-        "SP" : "http://www.sp.gov.br",
-        
+        "Acre" : "https://chat.whatsapp.com/EwkDYk6FEbH5vTFiU21W6B",
+        "Alagoas" : "https://chat.whatsapp.com/IPlkAO2dm7cKwFOmC5XQFt",
+        "Amapá" : "https://chat.whatsapp.com/KyZoGHkNLQ2LWBnyJoZPY0",
+        "Amazonas" : "https://chat.whatsapp.com/HulKIdIGgmXFjBNDsq5DqE",
+        "Bahia" : "https://chat.whatsapp.com/LMQkzGmmALx4vyb9rhN8dW",
+        "Ceará" : "https://chat.whatsapp.com/JIZF8RI1CsTHfqaC1YIHso",
+        "Distrito Federal" : "https://chat.whatsapp.com/B8B4YNNL5OwAcnAprejBp8",
+        "Espírito Santo" : "https://chat.whatsapp.com/KejE3P5mMFGD3wSh72U5C5",
+        "Goiás" : "https://chat.whatsapp.com/CbCqAYlsEw2GFqoKsOl0fH",
+        "Maranhão" : "https://chat.whatsapp.com/ByxRvPx6rRhAzsdL4MWQuQ",
+        "Mato Grosso" : "https://chat.whatsapp.com/DH2BPmuLWM4JoZMYFA5y4H",
+        "Mato Grosso do Sul" : "https://chat.whatsapp.com/ElWxJBCaWww6dBWdGQcPrd",
+        "Minas Gerais" : "https://chat.whatsapp.com/BbOh9oScMo3GyeDN8ehV3h",
+        "Pará" : "https://chat.whatsapp.com/G0990xCm5Un8k2Dz42ZxtU",
+        "Paraíba" : "https://chat.whatsapp.com/JbEl82XxYY5457OwXoGG0w",
+        "Paraná" : "https://chat.whatsapp.com/HRXzMQHremjLkzngwlTuvJ",
+        "Pernambuco" : "https://chat.whatsapp.com/DyIhWlWGqQBIjeQvHACqAI",
+        "Piauí" : "https://chat.whatsapp.com/H4zYYO1ZkOm3ly829ILNXC",
+        "Rio de Janeiro" : "https://chat.whatsapp.com/K8FnCHJ4Tuk7eIXZEkxnSs",
+        "Rio Grande do Norte" : "https://chat.whatsapp.com/HIv98Af5VyR7kW0Y9WOk89",
+        "Rio Grande do Sul" : "https://chat.whatsapp.com/HLea1EXKLyT7QYsFtfMbJS",
+        "Rondônia" : "https://chat.whatsapp.com/InmvQpV3bXuFilbfq1hHF6",
+        "Roraima" : "https://chat.whatsapp.com/FGUTpMIVYzUFXZu8w1wEcM",
+        "Santa Catarina" : "https://chat.whatsapp.com/Jy8rI45Q8HlAkb2iYlA4JO",
+        "São Paulo" : "https://chat.whatsapp.com/FJyGm1bnjaY4LW8tJWyv76",
+        "Sergipe" : "https://chat.whatsapp.com/IdecxbesyGD8f9C81YbhLv",
+        "Tocantins" : "https://chat.whatsapp.com/BHPsmVkSFnvJjB7aJ3z8HP",        
     }
     $(document).ready(function () {
+        for (g in GRUPOS) {
+            $("#regiao").append("<option value='"+g+"'>" + g +"</option>")
+        }
         $("button").click(function (event) {
             event.preventDefault();
             var selected = $("select").children("option:selected"). val();
@@ -132,42 +159,6 @@
 <form>
 <select name="regiao" id="regiao" required>
 <option selected disabled value=''>Região</option>
-<option value="AC">Acre</option>
-<option value="AL">Alagoas</option>
-<option value="AP">Amapá</option>
-<option value="AM">Amazonas</option>
-<option value="BA">Bahia</option>
-<option value="CE">Ceará</option>
-<option value="DF">Distrito Federal</option>
-<option value="ES">Espírito Santo</option>
-<option value="GO">Goiás</option>
-<option value="GOI">Goiás - Interior</option>
-<option value="MA">Maranhão</option>
-<option value="MT">Mato Grosso</option>
-<option value="MTC">Mato Grosso - Cuiabá</option>
-<option value="MS">Mato Grosso do Sul</option>
-<option value="MG">Minas Gerais</option>
-<option value="PA">Pará</option>
-<option value="PB">Paraíba</option>
-<option value="PR">Paraná</option>
-<option value="PRC">Paraná - Curitiba</option>
-<option value="PE">Pernambuco</option>
-<option value="PI">Piauí</option>
-<option value="RJ">Rio de Janeiro</option>
-<option value="RJB">Rio de Janeiro - Baixada</option>
-<option value="RJC">Rio de Janeiro - Capital</option>
-<option value="RN">Rio Grande do Norte</option>
-<option value="RS">Rio Grande do Sul</option>
-<option value="RO">Rondônia</option>
-<option value="RR">Roraima</option>
-<option value="SC">Santa Catarina</option>
-<option value="SPBSAN">São Paulo - Baixada Santista</option>
-<option value="SPCAM">São Paulo - Campinas</option>
-<option value="SPC">São Paulo - Capital</option>
-<option value="SPA">São Paulo - Grande ABC</option>
-<option value="SPI">São Paulo - Interior</option>
-<option value="SE">Sergipe</option>
-<option value="TO">Tocantins</option>
 </select>
 <button type="submit">Acessar <svg viewBox="0 0 492.004 492.004">
 <path d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136
@@ -179,7 +170,7 @@
 </button>
 </form>
 <div class="sep"></div>
-<img src="img/logo.png" alt="All seeing eye" class="logo">
+<!-- <img src="img/logo.png" alt="All seeing eye" class="logo"> -->
 </div>
 
 </body>
