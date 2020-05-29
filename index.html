@@ -130,6 +130,7 @@
         for (g in GRUPOS) {
             $("#regiao").append("<option value='"+g+"'>" + g +"</option>")
         }
+        
         $("button").click(function (event) {
             event.preventDefault();
             var selected = $("select").children("option:selected"). val();
